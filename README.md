@@ -11,19 +11,8 @@ This project includes a simple script runner that executes shell scripts from th
 ./project <script_name>
 ```
 
-This will execute the shell script located at `scripts/<script_name>.sh`.
-
-### Example
+### Create and set up the database, without any user tables
 
 ```bash
-./project abc
+./project create_db
 ```
-
-Runs the code defined in `scripts/abc.sh`.
-
-### Adding New Scripts
-
-1. Create a new shell script in the `scripts/` directory
-2. Name it with a `.sh` extension
-3. Make it executable: `chmod +x scripts/your_script.sh`
-4. Run it with: `./project your_script`
