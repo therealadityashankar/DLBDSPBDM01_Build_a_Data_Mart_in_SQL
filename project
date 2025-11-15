@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # Simple script runner
-# Usage: ./project <script_name>
-# Runs scripts/<script_name>.sh
+# Usage: ./project <script_name> [args...]
+# Runs scripts/<script_name>.sh with additional arguments
 
 if [ $# -eq 0 ]; then
-    echo "Usage: $0 <script_name>"
-    echo "Runs scripts/<script_name>.sh"
+    echo "Usage: $0 <script_name> [args...]"
+    echo "Runs scripts/<script_name>.sh with additional arguments"
     exit 1
 fi
 
@@ -18,6 +18,9 @@ if [ ! -f "$SCRIPT_PATH" ]; then
     exit 1
 fi
 
+# Shift to remove the script name, leaving only the arguments
+shift
+
 echo "Running $SCRIPT_PATH..."
-bash "$SCRIPT_PATH"
+bash "$SCRIPT_PATH" "$@"
 echo "Done!"
