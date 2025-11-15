@@ -1,0 +1,10 @@
+CREATE TABLE Photo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    property_id INTEGER NOT NULL,
+    url TEXT NOT NULL,
+    caption TEXT,
+    is_primary INTEGER DEFAULT 0,
+    sort_order INTEGER,
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (property_id) REFERENCES Property(id) ON DELETE CASCADE
+);
