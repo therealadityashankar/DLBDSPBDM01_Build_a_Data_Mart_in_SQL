@@ -11,8 +11,20 @@ This project includes a simple script runner that executes shell scripts from th
 ./project <script_name>
 ```
 
-### Create and set up the database, without any user tables
+### Database Setup
+
+### Complete Setup Example
 
 ```bash
+# Create empty database
 ./project create_db
+
+# Create one table
+./project create_table user
+
+# Create all tables
+./project create_all_tables
+
+# Populate all tables with sample data
+./project populate_tables 21
 ```
