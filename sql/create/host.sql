@@ -1,0 +1,11 @@
+CREATE TABLE Host (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL,
+    is_verified INTEGER NOT NULL DEFAULT 0,
+    response_rate DECIMAL(5,2),
+    response_time TEXT,
+    superhost INTEGER NOT NULL DEFAULT 0,
+    region TEXT,
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES User(id) ON DELETE CASCADE
+);
