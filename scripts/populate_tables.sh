@@ -41,6 +41,7 @@ for i in $(seq 1 $NUM_SCRIPTS); do
     if [ $? -eq 0 ]; then
         echo "Data inserted into $TABLE_NAME"
         echo "Contents of $TABLE_NAME:"
+        echo ">> SELECT * FROM $TABLE_NAME;"
         sqlite3 "$DATABASE_FILE" "SELECT * FROM $TABLE_NAME;"
         echo ""
     else
