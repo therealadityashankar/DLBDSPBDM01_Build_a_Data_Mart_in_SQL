@@ -20,3 +20,4 @@ fi
 
 echo "Running $SCRIPT_PATH..."
 bash "$SCRIPT_PATH"
+echo "Done!"
