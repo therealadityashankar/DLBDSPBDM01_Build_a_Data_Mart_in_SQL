@@ -32,6 +32,10 @@ for i in $(seq 1 $NUM_SCRIPTS); do
     TABLE_NAME=$(basename "$SQL_FILE" | sed "s/^${i}_//" | sed 's/.sql$//')
     
     echo "[$i/$NUM_SCRIPTS] Populating: $TABLE_NAME"
+    echo "Executing SQL from $SQL_FILE:"
+    echo "---"
+    cat "$SQL_FILE"
+    echo "---"
     sqlite3 "$DATABASE_FILE" < "$SQL_FILE"
     
     if [ $? -eq 0 ]; then
