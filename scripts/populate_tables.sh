@@ -25,7 +25,7 @@ for i in $(seq 1 $NUM_SCRIPTS); do
     SQL_FILE=$(find "$SQL_DIR" -name "${i}_*.sql" | head -n 1)
     
     if [ -z "$SQL_FILE" ]; then
-        echo "✗ Warning: No script found for number $i (${i}_*.sql)"
+        echo "Warning: No script found for number $i (${i}_*.sql)"
         continue
     fi
     
