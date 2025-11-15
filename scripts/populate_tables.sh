@@ -35,9 +35,12 @@ for i in $(seq 1 $NUM_SCRIPTS); do
     sqlite3 "$DATABASE_FILE" < "$SQL_FILE"
     
     if [ $? -eq 0 ]; then
-        echo "✓ Data inserted into $TABLE_NAME"
+        echo "Data inserted into $TABLE_NAME"
+        echo "Contents of $TABLE_NAME:"
+        sqlite3 "$DATABASE_FILE" "SELECT * FROM $TABLE_NAME;"
+        echo ""
     else
-        echo "✗ Error inserting data into $TABLE_NAME"
+        echo "Error inserting data into $TABLE_NAME"
         exit 1
     fi
 done
