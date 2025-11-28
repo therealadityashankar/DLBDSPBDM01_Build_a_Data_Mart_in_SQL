@@ -4,6 +4,7 @@ University sql project
 ## Project Script Runner
 
 This project includes a simple script runner that executes shell scripts from the `scripts/` directory.
+This project has an accompanying colab file (linked in pebblepad) which describes the setup steps and goes through the setup for this utility, that it is highly recommended to use with this project
 
 ### Usage
 
